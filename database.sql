@@ -1,0 +1,4 @@
+-- CREATE TABLE "gallery" (
+--     "id" SERIAL PRIMARY KEY,
+--     "description" 
+-- )
