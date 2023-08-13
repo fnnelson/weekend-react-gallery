@@ -1,12 +1,19 @@
 import react, { useState } from "react";
 
-function GalleryItem({ art }, { isClicked }) {
+function GalleryItem({ art }) {
 
     const [showDescription, setShowDescription] = useState(false);
+    const [likeCount, setLikeCount] = useState(0);
 
     let flipSide = () => {
+        // flips the showDescription state of this item
         setShowDescription(!showDescription)
         // { console.log(showDescription) }
+    }
+
+    let likeCounter = () => {
+        // console.log("current likes:", likeCount)
+        setLikeCount(likeCount + 1);
     }
 
     return (
@@ -15,8 +22,8 @@ function GalleryItem({ art }, { isClicked }) {
             <div onClick={flipSide} className="frame">
                 {showDescription ? <p>{art.description}</p> : <img src={art.path} alt={art.description} />}
             </div>
-            <button>Like</button>
-            <p>No people like this!</p>
+            <button onClick={likeCounter}>Like ❤️</button>
+            <p>{likeCount == 0 ? "NO people like" : likeCount == 1 ? `${likeCount} person likes` : `${likeCount} people like`} this!</p>
         </>
     )
 }
