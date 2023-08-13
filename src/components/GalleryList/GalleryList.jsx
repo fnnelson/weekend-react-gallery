@@ -6,7 +6,7 @@ function GalleryList({ galleryListProp }) {
         <div className="art-gallery">
             {galleryListProp.map(art => (
                 <div key={art.id} className='art-item'>
-                    <GalleryItem art={art} />
+                    <GalleryItem art={art}/>
                 </div>
             ))}
         </div>
