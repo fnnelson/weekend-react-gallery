@@ -16,4 +16,13 @@
 img {
   width: 100px;
   height: 100px;
+  border: 3px solid rgb(142, 73, 73);
+  background: #eee;
+  margin: auto;
+  padding: 15px 15px;
+}
+
+.art-item {
+  display: inline-block;
+  margin: 5%;
 }

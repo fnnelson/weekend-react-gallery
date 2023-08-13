@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import Header from '../Header/Header';
+import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
 
@@ -25,19 +27,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">Gallery of My Life</h1>
-      </header>
-      <div className="art-gallery">
-        {artGalleryList.map(art => (
-          <div key={art.id}>
-            <img src={art.path} alt={art.description}/>
-            <p>{art.description}</p>
-          </div>
-        ))}
-      </div>
+      <Header />
+      <GalleryList galleryListProp={artGalleryList} />
+
     </div>
   );
 }
 
 export default App;
+
+
