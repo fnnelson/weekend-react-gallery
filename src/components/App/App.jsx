@@ -24,11 +24,10 @@ function App() {
     getGallery();
   }, [])
 
-
   return (
     <div className="App">
       <Header />
-      <GalleryList galleryListProp={artGalleryList} />
+      <GalleryList galleryListProp={artGalleryList} getGalleryProp1={getGallery} />
 
     </div>
   );

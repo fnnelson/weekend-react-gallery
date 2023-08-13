@@ -1,9 +1,10 @@
 import react, { useState } from "react";
+import axios from "axios";
 
-function GalleryItem({ art }) {
+function GalleryItem({ art }, { getGalleryProp2 }) {
 
     const [showDescription, setShowDescription] = useState(false);
-    const [likeCount, setLikeCount] = useState(0);
+    const [likeCount, setLikeCount] = useState(art.likes);
 
     let flipSide = () => {
         // flips the showDescription state of this item
@@ -14,6 +15,14 @@ function GalleryItem({ art }) {
     let likeCounter = () => {
         // console.log("current likes:", likeCount)
         setLikeCount(likeCount + 1);
+        axios.put(`/gallery/like/${art.id}`, { likeCount })
+            .then(response => {
+                console.log("response from PUT:", response)
+                { getGalleryProp2 };
+            })
+            .catch(error => {
+                console.log("error on PUT:", error)
+            })
     }
 
     return (
