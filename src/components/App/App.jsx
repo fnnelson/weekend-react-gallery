@@ -27,8 +27,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <GalleryList galleryListProp={artGalleryList} getGalleryProp1={getGallery} />
-
+      <GalleryList galleryListProp={artGalleryList} getGallery={getGallery} />
     </div>
   );
 }
